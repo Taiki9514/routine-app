@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #04040f;
+  --bg-card: #0d0d1a;
+  --bg-card2: #111124;
+  --border: #2a2a4a;
+  --border-lo: #1e1e3a;
+  --primary: #534AB7;
+  --primary-lo: rgba(83,74,183,0.15);
+  --success: #4ade80;
+  --success-lo: rgba(74,222,128,0.12);
+  --danger: #e24b4a;
+  --danger-lo: rgba(224,75,74,0.15);
+  --accent: #fbbf24;
+  --accent-lo: rgba(251,191,36,0.12);
+  --info: #60a5fa;
+  --text-hi: #e0e0ff;
+  --text-mid: #c0c0ee;
+  --text-lo: #8888aa;
+  --text-muted: #555580;
+  --text-dim: #444466;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-hi);
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* スクロールバー非表示 */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ページコンテナ */
+.page {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-base);
+  position: relative;
+}
+
+/* スクロールエリア */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* カード */
+.card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border-lo);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(127,119,221,0.25), transparent);
+  pointer-events: none;
+}
+
+/* ボタン */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-mid);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 9px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.btn-outline:hover { border-color: var(--primary); }
+
+/* バッジ */
+.badge-new {
+  background: var(--danger-lo);
+  color: #f87171;
+  border: 0.5px solid #a32d2d;
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.badge-ext {
+  background: rgba(103,232,249,0.1);
+  color: #67e8f9;
+  border: 0.5px solid #1a5a6a;
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* セクションラベル */
+.sec-label {
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  margin-bottom: 5px;
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.2s ease; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.pulse { animation: pulse 1.5s infinite; }
+
+/* ボトムナビ */
+.bottom-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #0f0f2a;
+  padding: 5px 0 max(4px, env(safe-area-inset-bottom));
+  background: #02020a;
+  flex-shrink: 0;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  padding: 2px 0;
+}
+.nav-item .nav-icon { font-size: 20px; color: #2a2a50; }
+.nav-item .nav-label { font-size: 9px; color: #2a2a50; }
+.nav-item.active .nav-icon,
+.nav-item.active .nav-label { color: #7f77dd; }
+
+/* トップバー */
+.topbar {
+  padding: 10px 14px 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-lo);
+  cursor: pointer;
+  padding: 4px;
+}
+.page-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  flex: 1;
+  text-align: center;
+}
