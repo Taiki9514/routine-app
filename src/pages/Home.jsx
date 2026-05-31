@@ -36,7 +36,7 @@ function BgArt() {
       <circle cx="310" cy="612" r="10" fill="none" stroke="#1a2a20" strokeWidth="0.8" opacity="0.45"/>
       <text x="310" y="616" textAnchor="middle" fontSize="8" fill="#1a3a25" opacity="0.45" fontFamily="sans-serif">Ξ</text>
       {/* ハリポタ稲妻＋眼鏡 右中 */}
-      <path d="M345" y1="300" d="M345 290 L350 303 L345 316 L350 329" fill="none" stroke="#2a2a50" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+      <path d="M345 290 L350 303 L345 316 L350 329" fill="none" stroke="#2a2a50" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
       <circle cx="332" cy="350" r="8" fill="none" stroke="#2a2a50" strokeWidth="0.8" opacity="0.45"/>
       <circle cx="348" cy="350" r="8" fill="none" stroke="#2a2a50" strokeWidth="0.8" opacity="0.45"/>
       <line x1="340" y1="350" x2="342" y2="350" stroke="#2a2a50" strokeWidth="0.8" opacity="0.45"/>
