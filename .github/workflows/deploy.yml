@@ -41,6 +41,8 @@ jobs:
         run: |
           cp sw.js dist/
           cp manifest.json dist/
+          mkdir -p dist/icons
+          cp -r public/icons dist/ 2>/dev/null || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
