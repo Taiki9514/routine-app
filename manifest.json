@@ -1,16 +1,11 @@
-{
-  "name": "ROUTINE",
-  "short_name": "ROUTINE",
-  "description": "ルーティン管理アプリ",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#04040f",
-  "theme_color": "#04040f",
-  "icons": [
-    {
-      "src": "./icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
-}
+ {
+    "name": "ROUTINE",
+    "short_name": "ROUTINE",
+    "description": "ルーティン管理アプリ",
+    "start_url": "/routine-app/",
+    "scope": "/routine-app/",
+    "display": "standalone",
+    "background_color": "#04040f",
+    "theme_color": "#04040f",
+    "icons": []
+  }
