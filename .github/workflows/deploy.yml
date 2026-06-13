@@ -37,12 +37,17 @@ jobs:
         env:
           VITE_ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
-      - name: Copy PWA files to dist
+      - name: Fix asset paths
         run: |
-          cp sw.js dist/
+          cd dist
+          sed -i 's|/assets/|./assets/|g' index.html
+          echo "index.html after fix:"
+          cat index.html
+
+      - name: Copy PWA files
+        run: |
           cp manifest.json dist/
-          mkdir -p dist/icons
-          cp -r public/icons dist/ 2>/dev/null || true
+          cp sw.js dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
