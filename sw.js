@@ -21,13 +21,9 @@
 
     const url = new URL(e.request.url);
 
-    // クロスオリジンリクエスト（API、フォ
-  ントCDN等）はスキップ
     if (url.origin !== location.origin)
   return;
 
-    // ナビゲーション（ページ遷移）: 
-  ネットワーク優先、失敗時はキャッシュ
     if (e.request.mode === 'navigate') {
       e.respondWith(
         fetch(e.request)
@@ -47,8 +43,6 @@
       return;
     }
 
-    // JS・CSSアセット: 
-  キャッシュ優先（初回ロード後に更新）
     e.respondWith(
       caches.match(e.request).then((cached)
   => {
